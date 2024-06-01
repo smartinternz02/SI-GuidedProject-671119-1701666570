@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Soil Moisture Prediction</title>
+    <style>
+        body {
+            background-image: url("https://wallpapers.com/images/featured/soil-wmd6mn3yi0cykl72.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            font-size:24px;
+         }
+     </style>
+</head>
+<body text="black">
+<div class="Login">
+    <center><h1>Soil Moisture Predictior</h1></center>
+    
+    <form action="/submit" method="post">
+        <h2>Please enter the following details</h2>
+
+        <label>Month:</label>
+        <input type="number" min="1" max="12" name="Month" placeholder="Month"/><br><br>
+
+        <label>Day:</label>
+        <input type="number" min="1" max="31" name="Day" placeholder="Day"/><br><br>
+
+        <label>Average Temperature:</label>
+        <input type="number" name="avg_temp" placeholder="Average Temperature"/><br><br>
+
+        <label>Average Humidity:</label>
+        <input type="number" name="avg_humd" placeholder="Average Humidity"/><br><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="height:30px;width:200px">Predict</button>
+    </form>
+    {% if result %}
+        <br>
+        <h2>{{ result }}</h2>
+    {% endif %}
+
+</div>
+</body>
+</html>
